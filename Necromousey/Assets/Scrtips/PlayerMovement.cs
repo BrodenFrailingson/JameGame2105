@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float Speed =3f;
     private bool isFacingRight = true;
 
+
     [SerializeField] private Rigidbody2D rb;
    
 
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
-
+            
         }
     }
 }
