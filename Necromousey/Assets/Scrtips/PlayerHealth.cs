@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int MaxHelath = 100;
     public int currentHelath;
+
+    public GameManger GM;
 
     public HealthBar healthBar;
 
@@ -26,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHelath <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

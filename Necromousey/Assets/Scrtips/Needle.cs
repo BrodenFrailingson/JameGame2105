@@ -13,11 +13,15 @@ public class Needle : MonoBehaviour
     private bool m_HasString = false;
     private bool m_islanded = false;
 
+    [SerializeField] public Transform NeedlePos;
+
     private Vector3 Position = new();
     // Start is called before the first frame update
     void Start()
     {
         Position = gameObject.transform.position;
+        
+        
 
     }
     // Update is called once per frame
@@ -28,5 +32,7 @@ public class Needle : MonoBehaviour
 
         float pointToMouse = Mathf.Atan2(Position.y - MousePos.y, Position.x - MousePos.x) * 180/Mathf.PI + 90;
         gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, Quaternion.AngleAxis(pointToMouse, new Vector3(0,0,1)), 20.0f);
+
+        transform.position = NeedlePos.position;
     }
 }
