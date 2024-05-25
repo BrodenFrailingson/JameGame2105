@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHelath <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("GameOver");
+            GM.GameOverUI();
         }
     }
 

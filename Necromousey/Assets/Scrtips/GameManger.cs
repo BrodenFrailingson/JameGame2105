@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool gameHasEnded = false;
+    public GameObject GameOverUi;
     void Start()
     {
         
@@ -23,11 +24,19 @@ public class GameManger : MonoBehaviour
     {
         SceneManager.LoadScene("Level");
     }
-    public void gameOver()
+    public void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+        }
     }
-    public void quitGame()
+    public void GameOverUI()
+    {
+        GameOverUi.SetActive(true);
+    }
+
+       public void quitGame()
     {
         Application.Quit();
     }
